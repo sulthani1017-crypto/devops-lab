@@ -2,19 +2,11 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone Repo') {
-            steps {
-                echo 'Repo Cloned Successfully'
-                // git branch: 'main', url: 'YOUR_GIT_REPO_URL'
-            }
-        }
-
-        stage('Compile Java') {
+        stage('Build') {
             steps {
                 sh 'javac hello.java'
             }
         }
-
         stage('Run') {
             steps {
                 sh 'java hello'
